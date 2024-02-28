@@ -1,6 +1,7 @@
 package com.example.firebaseapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,8 +18,10 @@ class GoogleSignActivity : AppCompatActivity() {
     private lateinit var enterYourName: AppCompatEditText
     private lateinit var enterYourEmail: AppCompatEditText
     private lateinit var enterYourPassword: AppCompatEditText
-//    private lateinit var saveUserData : AppCompatButton
+
+    //    private lateinit var saveUserData : AppCompatButton
     private lateinit var progressBar: ProgressBar
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,31 +32,32 @@ class GoogleSignActivity : AppCompatActivity() {
         enterYourPassword = findViewById(R.id.enter_yourPassword)
         progressBar = findViewById(R.id.save_progressBar)
 
-        findViewById<AppCompatButton>(R.id.save_userData).setOnClickListener { 
+        findViewById<AppCompatButton>(R.id.save_userData).setOnClickListener {
             progressBar.visibility = View.VISIBLE
             val saveName = enterYourName.text.toString().trim()
             val saveEmail = enterYourEmail.text.toString().trim()
             val savePassword = enterYourPassword.text.toString().trim()
-            
+
             val userId = FirebaseAuth.getInstance().currentUser!!.uid
-            
+
             val userDataMap = hashMapOf(
                 "userName" to saveName,
                 "userEmail" to saveEmail,
                 "userPassword" to savePassword
             )
-            
+
             dataBase.collection("user").document(userId).set(userDataMap)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Data Added successful", Toast.LENGTH_SHORT).show()
                     enterYourName.text!!.clear()
                     enterYourEmail.text!!.clear()
                     enterYourPassword.text!!.clear()
+
+                    startActivity(Intent(this, FetchDataActivity::class.java))
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Data Added failed", Toast.LENGTH_SHORT).show()
                 }
-            finish()
         }
     }
 }
