@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enter_phone_Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter phone number"
+            tools:ignore="HardcodedText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send otp"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enter_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter otp..."
+            tools:ignore="HardcodedText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/veryFyButton_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VeryFy otp"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_marginTop="20sp"
+        android:id="@+id/google_authentication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
