@@ -65,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             verifyOtp()
         }
 
-
         //Google Authentication id Access
         findViewById<SignInButton>(R.id.google_authentication).setOnClickListener {
             googleSignIn()
@@ -100,7 +99,6 @@ class MainActivity : AppCompatActivity() {
                     verificationID = verificationId
                     Toast.makeText(this@MainActivity, "Otp is sent", Toast.LENGTH_SHORT).show()
                 }
-
             })
             .build()
         PhoneAuthProvider.verifyPhoneNumber(phoneAuthentication)
@@ -154,4 +152,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-

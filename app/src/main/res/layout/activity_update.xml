@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".GoogleSignActivity">
+    android:gravity="center"
+    tools:context=".UpdateActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_yourName"
+            android:id="@+id/update_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Name"
@@ -25,11 +24,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_yourEmail"
+            android:id="@+id/update_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Email"
@@ -40,11 +38,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20sp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_yourPassword"
+            android:id="@+id/update_Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Password"
@@ -53,14 +50,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/save_userData"
-        android:layout_width="360dp"
+        android:id="@+id/update_yourData"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Data"
-        android:layout_marginTop="30sp"
+        android:text="Update"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:backgroundTint="#00BCD4"
+        android:layout_marginTop="20sp"
         tools:ignore="HardcodedText" />
 
 </LinearLayout>
